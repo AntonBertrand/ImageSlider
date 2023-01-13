@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="gallery">
+            <img src="images/image1.jpg" alt="" id="galleryImg1" style="display:block">
+            <img src="images/image2.jpg" alt="" id="galleryImg2" style="display:none">
+            <img src="images/image3.jpg" alt="" id="galleryImg3" style="display:none">
+            <img src="images/image4.jpg" alt="" id="galleryImg4" style="display:none">
+            <button class="galleryBtn" id="galleryBtn1" onclick="buttonClick(1)"></button>
+            <button class="galleryBtn" id="galleryBtn2" onclick="buttonClick(2)"></button>
+            <button class="galleryBtn" id="galleryBtn3" onclick="buttonClick(3)"></button>
+            <button class="galleryBtn" id="galleryBtn4"onclick="buttonClick(4)" ></button>
+        </div>
+    </div>
+    
+    <script>
+
+        let selectedImg = Number(1);
+
+        function buttonClick(number) {
+            for(i = 1 ; i <= 4 ; i++){
+                document.getElementById(`galleryImg${i}`).style.display = `none`;
+            }
+            document.getElementById(`galleryImg${number}`).style.display = `block`;
+
+            selectedImg = number;
+
+            for(i = 1 ; i <= 4 ; i++){
+                document.getElementById(`galleryBtn${i}`).style.backgroundColor = `transparent`;
+            }
+
+            document.getElementById(`galleryBtn${number}`).style.backgroundColor = `rgb(0, 192, 226)`;
+        }
+
+    </script>
+</body>
+</html>
+
